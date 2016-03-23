@@ -291,52 +291,40 @@ var bio = {
 
 bio.display();
 
-//////////////////////////////////
-// Internationalize button work //
-//////////////////////////////////
-
-//$("#main").append(internationalizeButton);
-
-
-function inName() {
-  /* var name = window.name; */ /* Gives comma-separated array */
-  /*  var name = bio.name;   */ /* bio.name gives space-separated array */
-
-  var name = bio.name.trim().split(" ");
-  // Turn into an array ["AlbERt" "EINstEiN"]. Trim off whitespace.
-  //console.log("name: " + name);
-  var firstName = name[0].slice(0,1).toUpperCase()+ name[0].slice(1).toLowerCase();
-  // Get and change the first name;
-  var lastName = name[1].toUpperCase(); // Get and change the last name;
-  console.log("firstName: " + firstName);
-  console.log("lastName: " + lastName);
-  var oldSpelling = $('#name').text();
-  var newSpelling = firstName + " " + lastName;
-  $('#name').text( newSpelling );
-  console.log(newSpelling);
-}
-
 // map magic
 $("#mapDiv").append(googleMap);
 
-//navbar?
+///////////////////////
+//navbar section     //
+///////////////////////
 
 $("#container").prepend("<section id='Navigation'></section>");
 
-$("#Navigation").append("<nav class='navbar navbar-inverse navbar-fixed-top'>");
+$("#Navigation").append("<nav class='navbar navbar-inverse'>");
 $("nav").append("<div class='container-fluid'>");
 $(".container-fluid").append("<div class='navbar-header'>");
-$(".navbar-header").append("<a class='navbar-brand' href='#'>WebSiteName</a>");
+$(".navbar-header").append("<a class='navbar-brand' href='#'>Online Resume</a>");
+$(".navbar-header").append("<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbody'>");
+$("button.navbar-toggle").append("<span class='icon-bar'></span>");
+$("button.navbar-toggle").append("<span class='icon-bar'></span>");
+$("button.navbar-toggle").append("<span class='icon-bar'></span>");
+$(".navbar-header").append("</button>");
+
 $(".container-fluid").append("<ul id='navbody' class='nav navbar-nav'>");
 $("#navbody").append("<li class='active'><a href='#'>Home</a></li>");
-$("#navbody").append("<li><a href='#'>Page 1</a></li>");
-$("#navbody").append("<li><a href='#'>Page 2</a></li> ");
-$("#navbody").append("<li><a href='#''>Page 3</a></li>");
+$("#navbody").append("<li><a href='#workExperience'>Work</a></li>");
+$("#navbody").append("<li><a href='#education'>Education</a></li> ");
+$("#navbody").append("<li><a href='#mapDiv'>Lived/Worked</a></li>");
+$("#navbody").append("<li><a href='#projects'>Projects</a></li>");
 $("#navbody").append("</ul>");
 $("nav").append("</div>");
 $("nav").append("</div>");
 $("nav").append("</nav>");
 $("nav").append("</div>");
+
+
+
+
 
 
 

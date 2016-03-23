@@ -18,6 +18,10 @@
   display:         flex;
 }
 
+/* make no navbar gap */
+.navbar {
+  margin-bottom: 0px;
+}
 .education-entry,
 .onlineClasses-entry,
 .work-entry,
