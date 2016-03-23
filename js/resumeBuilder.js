@@ -319,3 +319,26 @@ function inName() {
 // map magic
 $("#mapDiv").append(googleMap);
 
+//navbar?
+
+$("#container").prepend("<section id='Navigation'></section>");
+$("#Navigation").append("<nav class='navbar navbar-inverse'>");
+$("#Navigation").append("<div class='container-fluid'>");
+$("#Navigation").append("<div class='navbar-header'>");
+$("#Navigation").append("<a class='navbar-brand' href='#'>WebSiteName</a>");
+$("#Navigation").append("</div>");
+$("#Navigation").append("<ul class='nav navbar-nav'>");
+$("#Navigation").append("<li class='active'><a href='#'>Home</a></li>");
+$("#Navigation").append("<li><a href='#'>Page 1</a></li>");
+$("#Navigation").append("<li><a href='#'>Page 2</a></li> ");
+$("#Navigation").append("<li><a href='#''>Page 3</a></li>");
+$("#Navigation").append("</ul>");
+$("#Navigation").append("</div>");
+$("#Navigation").append("</nav>");
+$("#Navigation").append("</div>");
+
+
+
+
+
+
