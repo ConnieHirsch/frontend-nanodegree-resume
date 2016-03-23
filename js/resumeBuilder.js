@@ -322,23 +322,21 @@ $("#mapDiv").append(googleMap);
 //navbar?
 
 $("#container").prepend("<section id='Navigation'></section>");
-$("#Navigation").append("<nav class='navbar navbar-inverse'>");
-$("#Navigation").append("<div class='container-fluid'>");
-$("#Navigation").append("<div class='navbar-header'>");
-$("#Navigation").append("<a class='navbar-brand' href='#'>WebSiteName</a>");
-$("#Navigation").append("</div>");
-$("#Navigation").append("<ul class='nav navbar-nav'>");
-$("#Navigation").append("<li class='active'><a href='#'>Home</a></li>");
-$("#Navigation").append("<li><a href='#'>Page 1</a></li>");
-$("#Navigation").append("<li><a href='#'>Page 2</a></li> ");
-$("#Navigation").append("<li><a href='#''>Page 3</a></li>");
-$("#Navigation").append("</ul>");
-$("#Navigation").append("</div>");
-$("#Navigation").append("</nav>");
-$("#Navigation").append("</div>");
 
-
-
+$("#Navigation").append("<nav class='navbar navbar-inverse navbar-fixed-top'>");
+$("nav").append("<div class='container-fluid'>");
+$(".container-fluid").append("<div class='navbar-header'>");
+$(".navbar-header").append("<a class='navbar-brand' href='#'>WebSiteName</a>");
+$(".container-fluid").append("<ul id='navbody' class='nav navbar-nav'>");
+$("#navbody").append("<li class='active'><a href='#'>Home</a></li>");
+$("#navbody").append("<li><a href='#'>Page 1</a></li>");
+$("#navbody").append("<li><a href='#'>Page 2</a></li> ");
+$("#navbody").append("<li><a href='#''>Page 3</a></li>");
+$("#navbody").append("</ul>");
+$("nav").append("</div>");
+$("nav").append("</div>");
+$("nav").append("</nav>");
+$("nav").append("</div>");
 
 
 
