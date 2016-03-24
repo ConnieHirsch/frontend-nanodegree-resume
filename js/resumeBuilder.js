@@ -231,6 +231,13 @@ var bio = {
   "role": "Front End Web Developer",
   "welcomeMessage": "<p>Is this thing on?  TAP TAP  I sure hope it's working.</p>  <p>Look out, Itchy! He's Irish!</p><p>Uh' no, they're saying 'Boo-urns, Boo-urns.' Attempted murder? Now honestly, what is that? Do they give a Nobel Prize for attempted chemistry? But, Aquaman, you cannot marry a woman without gills. You're from two different worlds… Oh, I've wasted my life.</p><p><strong>…And the fluffy kitten played with that ball of string all through the night.</strong> <em> On a lighter note, a Kwik-E-Mart clerk was brutally murdered last night.</em> A lifetime of working with nuclear power has left me with a healthy green glow…and left me as impotent as a Nevada boxing commissioner.</p>",
   "contacts": {
+      "mobile": {"value": "617 555-1234", "icon" : "<i class='fa fa-phone'></i>"},
+      "email": {"value": "connie.hirsch@gmail.com", "icon" : "<i class='fa fa-paper-plane'></i>"},
+      "github": {"value": "ConnieHirsch", "icon" : "<i class='fa fa-git'></i>"},
+      "twitter" : {"value": "ConnieHirsch", "icon" : "<i class='fa fa-twitter'></i>"},
+      "location": {"value": "Somerville, MA", "icon" : "<i class='fa fa-home'></i>"}
+    },
+  "oldcontacts": {
       "mobile": "617 555-1234",
       "email": "connie.hirsch@gmail.com",
       "github": "ConnieHirsch",
@@ -250,15 +257,15 @@ var bio = {
     $("#topTitle").append(formattedName);
     $("#topTitle").append(formattedRole);
 
-    var formattedmobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
+    var formattedmobile = HTMLmobile.replace("%icon%",bio.contacts.mobile.icon).replace("%data%",bio.contacts.mobile.value);
     $("#topContacts").append(formattedmobile);
-    var formattedemail = HTMLemail.replace("%data%", bio.contacts.email);
+    var formattedemail = HTMLemail.replace("%icon%", bio.contacts.email.icon).replace("%data%", bio.contacts.email.value);
     $("#topContacts").append(formattedemail);
-    var formattedgithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedgithub = HTMLgithub.replace("%icon%", bio.contacts.github.icon).replace("%data%", bio.contacts.github.value);
     $("#topContacts").append(formattedgithub);
-    var formattedtwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    var formattedtwitter = HTMLtwitter.replace("%icon%", bio.contacts.twitter.icon).replace("%data%", bio.contacts.twitter.value);
     $("#topContacts").append(formattedtwitter);
-    var formattedlocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    var formattedlocation = HTMLlocation.replace("%icon%", bio.contacts.location.icon).replace("%data%", bio.contacts.location.value);
     $("#topContacts").append(formattedlocation);
 
     // add it to the footer as well!
