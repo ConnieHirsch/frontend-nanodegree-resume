@@ -331,7 +331,22 @@ $("nav").append("</div>");
 
 
 
+// experimental json
+// creates valid json text in console from education and jobs -- for key to map.
 
-
-
-
+var places = '{"places" :[';
+  for (job in work.jobs){
+    places += ('{"location": "' + work.jobs[job].location +
+      '", "name" : "' + work.jobs[job].employer +
+      '", "type" : "work"},');
+  };
+  //places = places.substr(0, places.length-1);
+  //places += ']';
+  for (school in education.schools){
+      places += ('{"location": "' + education.schools[school].location +
+      '", "name" : "' + education.schools[school].name +
+      '", "type" : "school"},');
+  };
+  places = places.substr(0, places.length-1);
+  places += ']}';
+console.log(places);
