@@ -1,0 +1,52 @@
+Now speaking with....
+Welcome! Please type in ''hello your_coach's_name'' when you're ready to chat and your coach will be ready to talk with you shortly.
+Udacity Coach: Hi Connie! It's Susan. Happy Friday! :)
+Udacity Coach: I was taking a look at your code and noticed that the infoWindows aren't opening.
+Udacity Coach: Yes.
+Udacity Coach: You have a function called
+Udacity Coach: infoWindow.open(map, marker);
+Udacity Coach: Excuse me. I meant you have the event listener function:
+Udacity Coach: google.maps.event.addListener(marker, 'click', function() {
+Udacity Coach: But inside that there is a console.log statement rather than the infoWindow.open(map, marker); statement.
+Udacity Coach: That causes the place name to be output to your console, but the infoWindow with the place name doesn't pop.
+Udacity Coach: Yeah, you have to call the infoWindow.open function for that to work.
+Udacity Coach: In terms of your questions about adding additional information about each location.
+Udacity Coach: You'd need to make your locations array a bit more robust to do that.
+Udacity Coach: If you notice in the findFinder() function in helper.js that function pulls just the locations out of bio, work, and education. It doesn't collect any other information about the object associated with the location.
+Udacity Coach: I think the logical place to pull that is in the locationFinder function. For example
+Udacity Coach: because you already have the info defined in JSON.
+Udacity Coach: So on 113 there's the statement:
+Udacity Coach: locations.push(bio.contacts.location.value);
+Udacity Coach: That pushes a single value into the locations array.
+Udacity Coach: What you might want to do is push an object into the array instead, and you can decide what is in that object depending on where the location is being pulled. From bio on 113, from school on 118, and from work on line 124. For example the object could have {'location': location, 'content': ]build the html content for this and stick it here'}
+Udacity Coach: There are other places where you are creating HTML strings and appending it to the resume. In this case the string would be associated with a location value.
+Udacity Coach: Yes, you can do that. I think the easiest thing would be to create a string based on the info in the object you are iterating over in locationFinder, and add that to the locations array with the location it is associated with so you can access the information in the infoWindow later.
+Udacity Coach: locations = [{'location': location, 'content': 'string'}, {'location': location, 'content': 'string'}, {'location': location, 'content': 'string'}];
+Udacity Coach: Then you would need to modify the other functions that rely on the locations array to take into account that there is more than one property associated with each one.
+Udacity Coach: Right.
+Udacity Coach: for (place in locations)
+Udacity Coach: place is the index of a location object in locations.
+Udacity Coach: So I believe the syntax would be locations[place].location for the location and
+Udacity Coach: locations[place].type for the string you added the additional information for.
+Udacity Coach: The query statement is searching on the location, like 'Cambridge, MA'
+Udacity Coach: In that for loop you are just assigning the location to the query variable.
+Udacity Coach: The request only does one thing, looks up a place name.
+Udacity Coach: To do something with the type you'd do that in the infoWindow function
+Udacity Coach: Do you have multiple markers for the same place now on your map?
+Udacity Coach: Ha, ha. Me too! :)
+Udacity Coach: I think it's okay to have multiple place markers. It would make the code a lot more complex to try to combine them. It's possible but I'm not sure it's worth it for this project. In Neighborhood Map you'll be doing a lot more with Google Maps.
+Udacity Coach: One other thing is that your JSON objects should contain all the properties given in the JSON schema, and should have values either real or fake all of which are displayed in the resume. It looks like some values are left out, like the school URLs.
+Udacity Coach: Also, all code must be in functions. The code to display the navbar is not in any function. That actually would make sense to just include directly in the index.html unless there's some aspect of it that will change based on the other JSONs.
+Udacity Coach: I only see one locations array defined in initializeMap
+Udacity Coach: var locations = [];
+Udacity Coach: The other is local to locationsFinder. Note the 'var' in front.
+Udacity Coach: On 218 locationFinder is called, that's where the locations local to locationFinder is returned. The value is assigned to the first locations var.
+Udacity Coach: Yeah, I might be off on the line number.
+Udacity Coach: Here is where the locationsFinder function is called:
+Udacity Coach: locations = locationFinder();
+Udacity Coach: locationFinder returns it's locations object, which gets assigned to the initializeMap locations array.
+Udacity Coach: Connie, I have to go as I have another 1:1. It's been great chatting with you.
+Udacity Coach: If you have other questions, you can post them on the Discussion Board for Online Resume project.
+Udacity Coach: Yes, it goes by fast. :)
+Udacity Coach: If you add additional info to the locations object, you will need to account for that in all places where locations is used by specifying wither it is location.location or location.type that is to be referred to.
+Udacity Coach: You're welcome!

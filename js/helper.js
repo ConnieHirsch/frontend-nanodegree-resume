@@ -110,18 +110,19 @@ function initializeMap() {
     var locations = [];
 
     // adds the single location property from bio to the locations array
-    locations.push(bio.contacts.location.value);
+    //locations.push(bio.contacts.location.value);
+    locations.push({"location" : bio.contacts.location.value, "type": "home"});
 
     // iterates through school locations and appends each location to
     // the locations array
     for (var school in education.schools) {
-      locations.push(education.schools[school].location);
+      locations.push({"location" : education.schools[school].location, "type" : "school"});
     }
 
     // iterates through work locations and appends each location to
     // the locations array
     for (var job in work.jobs) {
-      locations.push(work.jobs[job].location);
+      locations.push({"location" : work.jobs[job].location, "type" : "work"});
     }
     //let's see where we got.
     console.log(locations);
@@ -159,8 +160,8 @@ function initializeMap() {
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
       // your code goes here!
-      //content: "Test";
-      console.log("I clicked on " + name);
+      content: name;
+      //console.log("I clicked on " + name);
     });
 
     // this is where the pin actually gets added to the map.
@@ -197,7 +198,7 @@ function initializeMap() {
 
       // the search request object
       var request = {
-        query: locations[place]
+        query: locations[place].location
       }
 
       // Actually searches the Google Maps API for location data and runs the callback
