@@ -75,7 +75,7 @@ var education = {
       "location": "Somerville, MA",
       "majors": "Front End Web Developer",
       "degree": "Nanodegree",
-      "url" : ""
+      "url" : "http://www.udacity.com"
     },
     {
       "name" : "American International College, Computer Career Institute",
@@ -83,7 +83,7 @@ var education = {
       "location": "Burlington, MA",
       "majors": "Enterprise Solutions Developer",
       "degree" : "Master Certificate",
-      "url" : ""
+      "url" : "https://en.wikipedia.org/wiki/American_Career_Institute"
     },
     {
       "name" : "American International College, Computer Career Institute",
@@ -91,7 +91,7 @@ var education = {
       "location": "Cambridge, MA",
       "majors": "Visual Communication - Digital 3-D Design",
       "degree" : "Master Certificate",
-      "url" : ""
+      "url" : "https://en.wikipedia.org/wiki/American_Career_Institute"
     },
     {
       "name" : "Boston University, School of Public Communication",
@@ -99,7 +99,7 @@ var education = {
       "location" : "Boston, MA",
       "majors" : "Journalism",
       "degree" : "",
-      "url" : ""
+      "url" : "http://www.bu.edu/"
     }
   ],
   "onlineCourses": [
@@ -135,6 +135,12 @@ var education = {
     var formattedschoolDegreeMajor =
     HTMLschoolDegreeMajor.replace("%degree%",education.schools[school].degree).replace("%comma%", formattedComma).replace("%major%",education.schools[school].majors);
     $(".education-entry:last").append(formattedschoolDegreeMajor);
+
+    var myURL = education.schools[school].url;
+    var formattedURL = HTMLonlineURL.replace("%url%", myURL).replace("%data%", myURL);
+    $(".education-entry:last").append(formattedURL);
+
+
   }
 
   $("#education").append(HTMLonlineClasses);
