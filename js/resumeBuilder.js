@@ -187,7 +187,7 @@ var projects = {
   "description" : "Little bunny Foo Foo Went hopping through the forest Scooping up the field mice And bopping them on the head Down came the Good Fairy, and she said 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And bopping them on the head. 'I'll give you 3 chances, And if you don't behave, I will turn you into a goon!'",
   "images" : [
     { "pic" : "images/wormedShell-320x240.jpg", "alt": "Worm casts in a conch shell" }
-  ],
+    ],
   "url" : "http://www.constancehirsch.com"
   }
   ],
@@ -300,36 +300,6 @@ bio.display();
 
 // map magic
 $("#mapDiv").append(googleMap);
-
-///////////////////////
-//navbar section     //
-///////////////////////
-
-$("#container").prepend("<section id='Navigation'></section>");
-
-$("#Navigation").append("<nav class='navbar navbar-inverse'>");
-$("nav").append("<div class='container-fluid'>");
-$(".container-fluid").append("<div class='navbar-header'>");
-$(".navbar-header").append("<a class='navbar-brand' href='#'>Online Resume</a>");
-$(".navbar-header").append("<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbody'>");
-$("button.navbar-toggle").append("<span class='icon-bar'></span>");
-$("button.navbar-toggle").append("<span class='icon-bar'></span>");
-$("button.navbar-toggle").append("<span class='icon-bar'></span>");
-$(".navbar-header").append("</button>");
-
-$(".container-fluid").append("<ul id='navbody' class='nav navbar-nav'>");
-$("#navbody").append("<li class='active'><a href='#'>Home</a></li>");
-$("#navbody").append("<li><a href='#workExperience'>Work</a></li>");
-$("#navbody").append("<li><a href='#education'>Education</a></li> ");
-$("#navbody").append("<li><a href='#mapDiv'>Lived/Worked</a></li>");
-$("#navbody").append("<li><a href='#projects'>Projects</a></li>");
-$("#navbody").append("</ul>");
-$("nav").append("</div>");
-$("nav").append("</div>");
-$("nav").append("</nav>");
-$("nav").append("</div>");
-
-
 
 // experimental json
 // creates valid json text in console from education and jobs -- for key to map.
