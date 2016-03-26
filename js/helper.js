@@ -111,21 +111,21 @@ function initializeMap() {
 
     // adds the single location property from bio to the locations array
     //locations.push(bio.contacts.location.value);
-    locations.push({"location" : bio.contacts.location.value, "type": "home"});
+    locations.push({"location" : bio.contacts.location.value, "type": "home", "name" : "Home"});
 
     // iterates through school locations and appends each location to
     // the locations array
     for (var school in education.schools) {
-      locations.push({"location" : education.schools[school].location, "type" : "school"});
+      locations.push({"location" : education.schools[school].location, "type" : "school", "name" : education.schools[school].name});
     }
 
     // iterates through work locations and appends each location to
     // the locations array
     for (var job in work.jobs) {
-      locations.push({"location" : work.jobs[job].location, "type" : "work"});
+      locations.push({"location" : work.jobs[job].location, "type" : "work", "name" : work.jobs[job].employer});
     }
     //let's see where we got.
-    console.log(locations);
+    //console.log(locations);
 
     return locations;
   }
@@ -195,12 +195,12 @@ function initializeMap() {
 
     // Iterates through the array of locations, creates a search object for each location
     for (place in locations) {
-
+      //console.log(locations[place].name);
       // the search request object
       var request = {
         query: locations[place].location
       }
-
+      //console.log(request);
       // Actually searches the Google Maps API for location data and runs the callback
       // function with the search results after each search.
       service.textSearch(request, callback);
