@@ -254,7 +254,16 @@ var bio = {
     "pic" : "images/watercolorSmall.jpg",
     "alt" : "A picture of me."
     },
-  "skills": ["PHP", "CSS3", "Object-oriented coding", "Knitting", "Writing", "Navigation", "Demolition Derby"],
+  //"skills": ["PHP", "CSS3", "Object-oriented coding", "Knitting", "Writing", "Navigation", "Demolition Derby"],
+  "skills": [
+      {"skill": "PHP", "info" : "Self-taught, in fact, but only after formal Java school."},
+      {"skill": "CSS3", "info" : "I can make web pages sit up and do tricks."},
+      {"skill": "Object-oriented coding", "info" : "I started being a capital-P Programmer when I understood that programs really are ALL objects."},
+      {"skill": "Knitting", "info" : "More in common with programming than you might think."},
+      {"skill": "Writing", "info" : "Started college with the intention to become a journalist. Became a coder instead, but I can write documentation like whoa."},
+      {"skill": "Navigation", "info" : "I am hardly ever lost, but occasionally I don&#39;t know where I am."},
+      {"skill": "Demolition Derby", "info" : "Only really the avoiding being HIT part. That comes in handy in Boston traffic."}
+    ],
       //encapsulated display function
   "display" : function(){
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -288,11 +297,11 @@ var bio = {
     $("#welcome").append(formattedWelcome);
 
     $("#madSkills").append(HTMLskillsStart);
-    //console.log(bio.skills);
+    console.log(bio.skills);
         var formattedSkills = "";
         if (bio.skills.length > 0) {
           for (skill in bio.skills) {
-            var nextSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+            var nextSkill = HTMLskills.replace("%info%", bio.skills[skill].info).replace("%data%", bio.skills[skill].skill);
             formattedSkills = formattedSkills.concat(nextSkill) ;
             //console.log(formattedSkills);
           }
