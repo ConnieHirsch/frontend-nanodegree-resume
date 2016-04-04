@@ -152,7 +152,7 @@ var education = {
     var myURL = education.onlineCourses[onlineCourse].url;
     var formattedURL = HTMLonlineURL.replace("%url%", myURL).replace("%data%", myURL);
     $(".onlineClasses-entry:last").append(formattedTitleSchool);
-    $(".onlineClasses-entry:last").append(formattedDates);
+    $(".onlineClasses-entry:last").append(formattedDates).append("<div style='clear: both;'></div>");
     $(".onlineClasses-entry:last").append(formattedURL);
   }
   }
