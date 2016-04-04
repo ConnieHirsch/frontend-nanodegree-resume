@@ -20,7 +20,7 @@ var HTMLmobile = "<li class='flex-item'><span class='orange-text'>%icon% mobile<
 var HTMLemail = "<li class='flex-item'><span class='orange-text'>%icon% email</span><span class='white-text'>%data%</span></li>";
 var HTMLtwitter = "<li class='flex-item'><span class='orange-text'>%icon% twitter</span><span class='white-text'>%data%</span></li>";
 var HTMLgithub = "<li class='flex-item'><span class='orange-text'>%icon% github</span><span class='white-text'>%data%</span></li>";
-var HTMLblog = "<li class='flex-item'><span class='orange-text'>%icon% blog</span><span class='white-text'>%data%</span></li>";
+var HTMLlinkedin = "<li class='flex-item'><span class='orange-text'>%icon% linked in</span><span class='white-text'>%data%</span></li>";
 var HTMLlocation = "<li class='flex-item'><span class='orange-text'>%icon% location</span><span class='white-text'>%data%</span></li>";
 
 var HTMLbioPic = "<img src='%data%' class='biopic img-responsive' alt='%datum%'>";

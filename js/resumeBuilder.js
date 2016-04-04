@@ -235,15 +235,24 @@ projects.display();
 var bio = {
   "name": "Connie Hirsch",
   "role": "Front End Web Developer",
-  "welcomeMessage": "<p>I've spent more than 20 years working with application programs such as Ingres, SQL Server, Lotus Notes, Filemaker, and other packages.  I've studied C and Java, and have actually done front end coding in PHP, so I know I have the hard talent and soft skills to excel at web development.</p>" +
-  "<p>Hiring requirements for these jobs have sure changed!-- when last I was looking for a  coding job, you weren't expected to have an online portfolio of project examples.  Udacity in particular focuses on projects that showcase exactly the code and process that employers are expecting.</p>" +
-  "<p>Plus... I really do find coding -- making pages, programs work -- to be <em>fun</em>.  I like solving problems, I like looking at a working page I've made, I like interacting with the users to make it better for them.  This is exactly where I should be.</p>",
+  "welcomeMessage": "<p>I've spent more than 20 years working with application programs such" +
+  " as Ingres, SQL Server, Lotus Notes, Filemaker, and other packages.  I've studied C and" +
+  " Java, and have actually done front end coding in PHP, so I know I have the hard talent" +
+  " and soft skills to excel at web development.</p>" +
+  "<p>Hiring requirements for these jobs have sure changed!-- when last I was looking for" +
+  " a  coding job, you weren't expected to have an online portfolio of project examples.  " +
+  "Udacity in particular focuses on projects that showcase exactly the code and process that" +
+  " employers are expecting.</p>" +
+  "<p>Plus... I really do find coding -- making pages, programs work -- to be <em>fun</em>.  " +
+  "I like solving problems, I like looking at a working page I've made, I like interacting" +
+  " with the users to make it better for them.  This is exactly where I should be.</p>",
 
   "contacts": {
       "mobile": {"value": "<a href='tel:+1-617-555-1234'>617 555-1234</a>", "icon" : "<i class='fa fa-phone'></i>"},
       "email": {"value": "<a href='mailto:connie.hirsch@gmail.com?Subject=Hello'>connie.hirsch@gmail.com</a>", "icon" : "<i class='fa fa-paper-plane'></i>"},
       "github": {"value": "<a href='https://github.com/ConnieHirsch'>ConnieHirsch</a>", "icon" : "<i class='fa fa-git'></i>"},
       "twitter" : {"value": "<a href='https://twitter.com/ConnieHirsch'>ConnieHirsch</a>", "icon" : "<i class='fa fa-twitter'></i>"},
+      "linkedin" : {"value": "<a href='https://www.linkedin.com/in/conniehirsch'>ConnieHirsch</a>", "icon" : "<i class='fa fa-linkedin'></i>"},
       "location": {"value": "<a href='https://en.wikipedia.org/wiki/Somerville,_Massachusetts'>Somerville, MA</a>", "icon" : "<i class='fa fa-home'></i>"}
     },
   "oldcontacts": {
@@ -283,7 +292,9 @@ var bio = {
     $("#topContacts").append(formattedgithub);
     var formattedtwitter = HTMLtwitter.replace("%icon%", bio.contacts.twitter.icon).replace("%data%", bio.contacts.twitter.value);
     $("#topContacts").append(formattedtwitter);
-    var formattedlocation = HTMLlocation.replace("%icon%", bio.contacts.location.icon).replace("%data%", bio.contacts.location.value);
+    var formattedlinkedin = HTMLlinkedin.replace("%icon%", bio.contacts.linkedin.icon).replace("%data%", bio.contacts.linkedin.value);
+    $("#topContacts").append(formattedlinkedin);
+        var formattedlocation = HTMLlocation.replace("%icon%", bio.contacts.location.icon).replace("%data%", bio.contacts.location.value);
     $("#topContacts").append(formattedlocation);
 
     // add it to the footer as well!
@@ -291,6 +302,7 @@ var bio = {
     $("#footerContacts").append(formattedemail);
     $("#footerContacts").append(formattedgithub);
     $("#footerContacts").append(formattedtwitter);
+    $("#footerContacts").append(formattedlinkedin);
     $("#footerContacts").append(formattedlocation);
 
     var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic.pic).replace("%datum%", bio.bioPic.alt);
