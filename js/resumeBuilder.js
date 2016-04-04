@@ -235,7 +235,10 @@ projects.display();
 var bio = {
   "name": "Connie Hirsch",
   "role": "Front End Web Developer",
-  "welcomeMessage": "<p>Is this thing on?  TAP TAP  I sure hope it's working.</p>  <p>Look out, Itchy! He's Irish!</p><p>Uh' no, they're saying 'Boo-urns, Boo-urns.' Attempted murder? Now honestly, what is that? Do they give a Nobel Prize for attempted chemistry? But, Aquaman, you cannot marry a woman without gills. You're from two different worlds… Oh, I've wasted my life.</p><p><strong>…And the fluffy kitten played with that ball of string all through the night.</strong> <em> On a lighter note, a Kwik-E-Mart clerk was brutally murdered last night.</em> A lifetime of working with nuclear power has left me with a healthy green glow…and left me as impotent as a Nevada boxing commissioner.</p>",
+  "welcomeMessage": "<p>I've spent more than 20 years working with application programs such as Ingres, SQL Server, Lotus Notes, Filemaker, and other packages.  I've studied C and Java, and have actually done front end coding in PHP, so I know I have the hard talent and soft skills to excel at web development.</p>" +
+  "<p>Hiring requirements for these jobs have sure changed!-- when last I was looking for a  coding job, you weren't expected to have an online portfolio of project examples.  Udacity in particular focuses on projects that showcase exactly the code and process that employers are expecting.</p>" +
+  "<p>Plus... I really do find coding -- making pages, programs work -- to be <em>fun</em>.  I like solving problems, I like looking at a working page I've made, I like interacting with the users to make it better for them.  This is exactly where I should be.</p>",
+
   "contacts": {
       "mobile": {"value": "<a href='tel:+1-617-555-1234'>617 555-1234</a>", "icon" : "<i class='fa fa-phone'></i>"},
       "email": {"value": "<a href='mailto:connie.hirsch@gmail.com?Subject=Hello'>connie.hirsch@gmail.com</a>", "icon" : "<i class='fa fa-paper-plane'></i>"},
@@ -313,8 +316,11 @@ var bio = {
 
 bio.display();
 
-// map magic
+///////////////////
+// map magic     //
+///////////////////
 $("#mapDiv").append(googleMap);
+
 
 // experimental json
 // creates valid json text in console from education and jobs -- for key to map.
