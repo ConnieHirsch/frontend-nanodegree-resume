@@ -201,7 +201,7 @@ var projects = {
   "display" : function(){
     var projCount = 0;
     var addGray = "";
-  for (proj in projects.projects){
+   for (proj in projects.projects){
     if (projCount == 0 || projCount == 2 ) { addGray = " project-gray";} else {addGray = "";}
     var formattedprojectStart = HTMLprojectStart.replace("%extraClass%", addGray);
     $("#projects").append(formattedprojectStart);
@@ -312,13 +312,12 @@ var bio = {
     $("#welcome").append(formattedWelcome);
 
     $("#madSkills").append(HTMLskillsStart);
-    console.log(bio.skills);
+    //console.log(bio.skills);
         var formattedSkills = "";
         if (bio.skills.length > 0) {
-          for (skill in bio.skills) {
-            var nextSkill = HTMLskills.replace("%info%", bio.skills[skill].info).replace("%data%", bio.skills[skill].skill);
+          for (var i = 0; i < bio.skills.length; i++) {
+            var nextSkill = HTMLskills.replace("%info%", bio.skills[i].info).replace("%data%", bio.skills[i].skill);
             formattedSkills = formattedSkills.concat(nextSkill) ;
-            //console.log(formattedSkills);
           }
         };
     $("#skills").append(formattedSkills);
@@ -328,6 +327,10 @@ var bio = {
 
 bio.display();
 
+var a = ["PHP", "Fred", "Ethel"];
+a.forEach(function(entry) {
+    console.log(entry);
+});
 ///////////////////
 // map magic     //
 ///////////////////
