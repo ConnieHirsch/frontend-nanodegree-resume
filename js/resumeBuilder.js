@@ -5,7 +5,7 @@ var work = {
 
   //encapsulated display function
   "display" : function(){
-    for (job in work.jobs){
+    for (var job = 0; job < work.jobs.length; job++){
       $("#workExperience").append(HTMLworkStart);
       //console.log(work.jobs[job].employer);
       var formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
@@ -114,7 +114,7 @@ var education = {
 //encapsulated display function
 "display" : function(){
 
-  for (school in education.schools){
+  for (var school = 0; school < education.schools.length; school++ ){
     $("#education").append(HTMLschoolStart);
     //console.log(education.schools[school].name);
     var formattedschoolName =
@@ -144,8 +144,7 @@ var education = {
   }
 
   $("#education").append(HTMLonlineClasses);
-
-  for (onlineCourse in education.onlineCourses)
+  for (var onlineCourse = 0; onlineCourse < education.onlineCourses.length; onlineCourse++)
   {
     var formattedTitleSchool = HTMLonlineTitleSchool.replace("%title%", education.onlineCourses[onlineCourse].title).replace("%school%", education.onlineCourses[onlineCourse].school);
     var formattedDates = HTMLonlineDates.replace("%data%",education.onlineCourses[onlineCourse].date);
@@ -201,10 +200,6 @@ var projects = {
     "display" : function(){
       var projCount = 0;
       var addGray = "";
-/*      for (image in projects.projects[proj].images) {
-            for (var i = 0; i < bio.skills.length; i++) {
-      for (proj in projects.projects){
-              */
       for (var proj = 0; proj <projects.projects.length; proj++ ){
         if (projCount == 0 || projCount == 2 ) { addGray = " project-gray";} else {addGray = "";}
         var formattedprojectStart = HTMLprojectStart.replace("%extraClass%", addGray);
@@ -331,24 +326,26 @@ var bio = {
 
 bio.display();
 
+
 ///////////////////
 // map magic     //
 ///////////////////
 $("#mapDiv").append(googleMap);
 
 
+/////////////////////
 // experimental json
 // creates valid json text in console from education and jobs -- for key to map.
 
 var places = '{"places" :[';
-  for (job in work.jobs){
+  for (var job = 0; job < work.jobs.length; job++ ){
     places += ('{"location": "' + work.jobs[job].location +
       '", "name" : "' + work.jobs[job].employer +
       '", "type" : "work"},');
   };
   //places = places.substr(0, places.length-1);
   //places += ']';
-  for (school in education.schools){
+  for (var school = 0; school < education.schools.length; school++ ){
       places += ('{"location": "' + education.schools[school].location +
       '", "name" : "' + education.schools[school].name +
       '", "type" : "school"},');
