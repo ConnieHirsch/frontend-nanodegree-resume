@@ -198,31 +198,35 @@ var projects = {
   }
   ],
     //encapsulated display function
-  "display" : function(){
-    var projCount = 0;
-    var addGray = "";
-   for (proj in projects.projects){
-    if (projCount == 0 || projCount == 2 ) { addGray = " project-gray";} else {addGray = "";}
-    var formattedprojectStart = HTMLprojectStart.replace("%extraClass%", addGray);
-    $("#projects").append(formattedprojectStart);
-    var formattedprojectTitle =
-      HTMLprojectTitle.replace("%url%",projects.projects[proj].url).replace("%data%",projects.projects[proj].title).replace("%dates%",projects.projects[proj].dates);
-    $(".project-entry:last").append(formattedprojectTitle);
+    "display" : function(){
+      var projCount = 0;
+      var addGray = "";
+/*      for (image in projects.projects[proj].images) {
+            for (var i = 0; i < bio.skills.length; i++) {
+      for (proj in projects.projects){
+              */
+      for (var proj = 0; proj <projects.projects.length; proj++ ){
+        if (projCount == 0 || projCount == 2 ) { addGray = " project-gray";} else {addGray = "";}
+        var formattedprojectStart = HTMLprojectStart.replace("%extraClass%", addGray);
+        $("#projects").append(formattedprojectStart);
+        var formattedprojectTitle =
+        HTMLprojectTitle.replace("%url%",projects.projects[proj].url).replace("%data%",projects.projects[proj].title).replace("%dates%",projects.projects[proj].dates);
+        $(".project-entry:last").append(formattedprojectTitle);
 
-    var formattedprojectDescription =
-      HTMLprojectDescription.replace("%data%",projects.projects[proj].description);
-    $(".project-entry:last").append("<p>" + formattedprojectDescription);
+        var formattedprojectDescription =
+        HTMLprojectDescription.replace("%data%",projects.projects[proj].description);
+        $(".project-entry:last").append("<p>" + formattedprojectDescription);
 
-    if (projects.projects[proj].images.length > 0) {
-      for (image in projects.projects[proj].images) {
-      var formattedprojectImage =
-        HTMLprojectImage.replace("%data%",projects.projects[proj].images[image].pic).replace("%datum%",projects.projects[proj].images[image].alt);
-      $(".project-entry:last").append(formattedprojectImage);
-      }
-    }
-    projCount++;
-  $(".project-entry:last").append("</p><div style='clear: both;'></div>");
-  }
+        if (projects.projects[proj].images.length > 0) {
+              for (var i = 0; i < projects.projects[proj].images.length; i++) {
+                var formattedprojectImage =
+                HTMLprojectImage.replace("%data%",projects.projects[proj].images[i].pic).replace("%datum%",projects.projects[proj].images[i].alt);
+                $(".project-entry:last").append(formattedprojectImage);
+              }
+            }
+            projCount++;
+            $(".project-entry:last").append("</p><div style='clear: both;'></div>");
+          }
 }
 };
 
@@ -327,10 +331,6 @@ var bio = {
 
 bio.display();
 
-var a = ["PHP", "Fred", "Ethel"];
-a.forEach(function(entry) {
-    console.log(entry);
-});
 ///////////////////
 // map magic     //
 ///////////////////
