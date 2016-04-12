@@ -27,7 +27,7 @@ var HTMLworkLocation = "<div class='location-text'>%data%</div>";
 var HTMLworkDescription = "<p>%data%</p>";
 
 var HTMLprojectStart = "<div class='project-entry %extraClass%'></div>";
-var HTMLprojectTitle = "<h3><a href='%url%'>%data%</a> - <span>%dates%</span></h3>";
+var HTMLprojectTitle = "<h3><a href='%url%' target='_blank'>%data%</a> - <span>%dates%</span></h3>";
 var HTMLprojectDescription = "%data%";
 var HTMLprojectImage = "<img src='%data%' class='img-responsive project-image' alt='%datum%'>";
 
@@ -40,7 +40,7 @@ var HTMLschoolDegreeMajor = "<p> %degree%%comma% Major: <em>%major%</em></p> </d
 var HTMLonlineClasses = "<h2>Online Classes</h2><div class='onlineClasses-entry'></div>";
 var HTMLonlineTitleSchool = "<h4>%title% - %school%</h4>";
 var HTMLonlineDates = "<div class='date-text'>%data%</div>";
-var HTMLonlineURL = "<p>Website: <a href='%url%'>%data%</a></p>";
+var HTMLonlineURL = "<p>Website: <a href='%url%' target='_blank'>%data%</a></p>";
 
 var googleMap = "<div id='map'></div>";
 

@@ -238,19 +238,19 @@ var bio = {
       "icon": "<i class='fa fa-paper-plane'></i>"
     },
     "github": {
-      "value": "<a href='https://github.com/ConnieHirsch'>ConnieHirsch</a>",
+      "value": "<a href='https://github.com/ConnieHirsch' target='_blank'>ConnieHirsch</a>",
       "icon": "<i class='fa fa-git'></i>"
     },
     "twitter": {
-      "value": "<a href='https://twitter.com/ConnieHirsch'>ConnieHirsch</a>",
+      "value": "<a href='https://twitter.com/ConnieHirsch' target='_blank'>ConnieHirsch</a>",
       "icon": "<i class='fa fa-twitter'></i>"
     },
     "linkedin": {
-      "value": "<a href='https://www.linkedin.com/in/conniehirsch'>ConnieHirsch</a>",
+      "value": "<a href='https://www.linkedin.com/in/conniehirsch' target='_blank'>ConnieHirsch</a>",
       "icon": "<i class='fa fa-linkedin'></i>"
     },
     "location": {
-      "value": "<a href='https://en.wikipedia.org/wiki/Somerville,_Massachusetts'>Somerville, MA</a>",
+      "value": "<a href='https://en.wikipedia.org/wiki/Somerville,_Massachusetts' target='_blank'>Somerville, MA</a>",
       "icon": "<i class='fa fa-home'></i>"
     }
   },
@@ -287,7 +287,7 @@ var bio = {
     "skill": "Demolition Derby",
     "info": "Only really the avoiding being HIT part. That comes in handy in Boston traffic."
   }],
-  "bioPic": {
+  "biopic": {
     "pic": "images/watercolorSmall.jpg",
     "alt": "A picture of me."
   },
@@ -320,8 +320,8 @@ var bio = {
     $("#footerContacts").append(formattedlinkedin);
     $("#footerContacts").append(formattedlocation);
 
-    var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic.pic).replace("%datum%", bio.bioPic.alt);
-    $("#bioPic").append(formattedbioPic);
+    var formattedbiopic = HTMLbioPic.replace("%data%", bio.biopic.pic).replace("%datum%", bio.biopic.alt);
+    $("#bioPic").append(formattedbiopic);
 
     var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#welcome").append(formattedWelcome);
