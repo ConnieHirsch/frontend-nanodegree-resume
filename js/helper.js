@@ -99,7 +99,7 @@ function initializeMap() {
     // adds the single location property from bio to the locations array
     //locations.push(bio.contacts.location.value);
     locations.push({
-      "location": bio.contacts.location.value,
+      "location": bio.contacts.location,
       "type": "home",
       "name": "Home"
     });

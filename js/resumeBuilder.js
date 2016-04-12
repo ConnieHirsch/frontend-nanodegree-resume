@@ -163,13 +163,8 @@ var projects = {
     " 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And" +
     " bopping them on the head. 'I'll give you 3 chances, And if you don't behave, " +
     "I will turn you into a goon!'",
-    "images": [{
-      "pic": "images/leverett-320x240.jpg",
-      "alt": "Sky over the Leverett Circle, Boston"
-    }, {
-      "pic": "images/rooster-320x240.jpg",
-      "alt": "Rooster, Somerville MA"
-    }],
+    "images": ["images/leverett-320x240.jpg", "images/rooster-320x240.jpg"],
+    "imagesAlt": ["Sky over the Leverett Circle, Boston","Rooster, Somerville MA"],
     "url": "http://www.constancehirsch.com"
   }, {
     "title": "This Project Has No Picture",
@@ -179,10 +174,8 @@ var projects = {
     " 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And" +
     " bopping them on the head. 'I'll give you 3 chances, And if you don't behave, " +
     "I will turn you into a goon!'",
-    "images": [{
-      "pic": "",
-      "alt": ""
-    }],
+    "images": [""],
+    "imagesAlt": [""],
     "url": "http://www.constancehirsch.com"
   }, {
     "title": "Little Bunny FooFoo, Which Has Only One Picture",
@@ -192,10 +185,8 @@ var projects = {
     " 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And" +
     " bopping them on the head. 'I'll give you 3 chances, And if you don't behave, " +
     "I will turn you into a goon!'",
-    "images": [{
-      "pic": "images/wormedShell-320x240.jpg",
-      "alt": "Worm casts in a conch shell"
-    }],
+    "images": ["images/wormedShell-320x240.jpg"],
+    "imagesAlt": ["Worm casts in a conch shell"],
     "url": "http://www.constancehirsch.com"
   }],
   //encapsulated display function
@@ -221,7 +212,7 @@ var projects = {
       if (projects.projects[proj].images.length > 0) {
         for (var i = 0; i < projects.projects[proj].images.length; i++) {
           var formattedprojectImage =
-            HTMLprojectImage.replace("%data%", projects.projects[proj].images[i].pic).replace("%datum%", projects.projects[proj].images[i].alt);
+            HTMLprojectImage.replace("%data%", projects.projects[proj].images[i]).replace("%datum%", projects.projects[proj].imagesAlt[i]);
           $(".project-entry:last").append(formattedprojectImage);
         }
       }
@@ -240,31 +231,21 @@ projects.display();
 var bio = {
   "name": "Connie Hirsch",
   "role": "Front End Web Developer",
-  "contacts": {
-    "mobile": {
-      "value": "<a href='tel:+1-617-555-1234'>617 555-1234</a>",
-      "icon": "<i class='fa fa-phone'></i>"
-    },
-    "email": {
-      "value": "<a href='mailto:connie.hirsch@gmail.com?Subject=Hello'>connie.hirsch@gmail.com</a>",
-      "icon": "<i class='fa fa-paper-plane'></i>"
-    },
-    "github": {
-      "value": "<a href='https://github.com/ConnieHirsch' target='_blank'>ConnieHirsch</a>",
-      "icon": "<i class='fa fa-git'></i>"
-    },
-    "twitter": {
-      "value": "<a href='https://twitter.com/ConnieHirsch' target='_blank'>ConnieHirsch</a>",
-      "icon": "<i class='fa fa-twitter'></i>"
-    },
-    "linkedin": {
-      "value": "<a href='https://www.linkedin.com/in/conniehirsch' target='_blank'>ConnieHirsch</a>",
-      "icon": "<i class='fa fa-linkedin'></i>"
-    },
-    "location": {
-      "value": "<a href='https://en.wikipedia.org/wiki/Somerville,_Massachusetts' target='_blank'>Somerville, MA</a>",
-      "icon": "<i class='fa fa-home'></i>"
-    }
+  "contacts" : {
+    "mobile" : "<a href='tel:+1-617-555-1234'>617 555-1234</a>",
+    "email" : "<a href='mailto:connie.hirsch@gmail.com?Subject=Hello'>connie.hirsch@gmail.com</a>",
+    "github" : "<a href='https://github.com/ConnieHirsch' target='_blank'>ConnieHirsch</a>",
+    "twitter" : "<a href='https://twitter.com/ConnieHirsch' target='_blank'>ConnieHirsch</a>",
+    "linkedin" : "<a href='https://www.linkedin.com/in/conniehirsch' target='_blank'>ConnieHirsch</a>",
+    "location" : "<a href='https://en.wikipedia.org/wiki/Somerville,_Massachusetts' target='_blank'>Somerville, MA</a>"
+  },
+  "contactsIcon" : {
+    "mobile" : "<i class='fa fa-phone'></i>",
+    "email" : "<i class='fa fa-paper-plane'></i>",
+    "github" : "<i class='fa fa-git'></i>",
+    "twitter" : "<i class='fa fa-twitter'></i>",
+    "linkedin" : "<i class='fa fa-linkedin'></i>",
+    "location" : "<i class='fa fa-home'></i>"
   },
   "welcomeMessage": "<p>I've spent more than 20 years working with application programs such" +
     " as Ingres, SQL Server, Lotus Notes, Filemaker, and other packages.  I've studied C and" +
@@ -313,26 +294,29 @@ var bio = {
     $("#topTitle").append(formattedName);
     $("#topTitle").append(formattedRole);
 
-    var formattedmobile = HTMLmobile.replace("%icon%", bio.contacts.mobile.icon).replace("%data%", bio.contacts.mobile.value);
-    $("#topContacts").append(formattedmobile);
-    var formattedemail = HTMLemail.replace("%icon%", bio.contacts.email.icon).replace("%data%", bio.contacts.email.value);
-    $("#topContacts").append(formattedemail);
-    var formattedgithub = HTMLgithub.replace("%icon%", bio.contacts.github.icon).replace("%data%", bio.contacts.github.value);
-    $("#topContacts").append(formattedgithub);
-    var formattedtwitter = HTMLtwitter.replace("%icon%", bio.contacts.twitter.icon).replace("%data%", bio.contacts.twitter.value);
-    $("#topContacts").append(formattedtwitter);
-    var formattedlinkedin = HTMLlinkedin.replace("%icon%", bio.contacts.linkedin.icon).replace("%data%", bio.contacts.linkedin.value);
-    $("#topContacts").append(formattedlinkedin);
-    var formattedlocation = HTMLlocation.replace("%icon%", bio.contacts.location.icon).replace("%data%", bio.contacts.location.value);
-    $("#topContacts").append(formattedlocation);
+    for (var contact = 0; contact < bio.contacts.length; contact++ ){
+      console.log(bio.contacts[contact]);
+    }
+    var formattedmobile = HTMLmobile.replace("%icon%", bio.contactsIcon.mobile).replace("%data%", bio.contacts.mobile);
+    var formattedemail = HTMLemail.replace("%icon%", bio.contactsIcon.email).replace("%data%", bio.contacts.email);
+    var formattedgithub = HTMLgithub.replace("%icon%", bio.contactsIcon.github).replace("%data%", bio.contacts.github);
+    var formattedtwitter = HTMLtwitter.replace("%icon%", bio.contactsIcon.twitter).replace("%data%", bio.contacts.twitter);
+    var formattedlinkedin = HTMLlinkedin.replace("%icon%", bio.contactsIcon.linkedin).replace("%data%", bio.contacts.linkedin);
+    var formattedlocation = HTMLlocation.replace("%icon%", bio.contactsIcon.location).replace("%data%", bio.contacts.location);
 
-    // add it to the footer as well!
-    $("#footerContacts").append(formattedmobile);
-    $("#footerContacts").append(formattedemail);
-    $("#footerContacts").append(formattedgithub);
-    $("#footerContacts").append(formattedtwitter);
-    $("#footerContacts").append(formattedlinkedin);
-    $("#footerContacts").append(formattedlocation);
+    // add it to the header AND footer as well!
+    $(formattedmobile).appendTo("#footerContacts");
+    $(formattedmobile).appendTo("#topContacts");
+    $(formattedemail).appendTo("#topContacts");
+    $(formattedemail).appendTo("#footerContacts");
+    $(formattedgithub).appendTo("#topContacts");
+    $(formattedgithub).appendTo("#footerContacts");
+    $(formattedtwitter).appendTo("#topContacts");
+    $(formattedtwitter).appendTo("#footerContacts");
+    $(formattedlinkedin).appendTo("#topContacts");
+    $(formattedlinkedin).appendTo("#footerContacts");
+    $(formattedlocation).appendTo("#topContacts");
+    $(formattedlocation).appendTo("#footerContacts");
 
     var formattedbiopic = HTMLbioPic.replace("%data%", bio.biopic.pic).replace("%datum%", bio.biopic.alt);
     $("#bioPic").append(formattedbiopic);
