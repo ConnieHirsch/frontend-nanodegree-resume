@@ -3,6 +3,38 @@
 //////////////////
 var work = {
 
+  "jobs": [{
+    "employer": "Lyft",
+    "title": "Rideshare Driver",
+    "location": "Boston, MA",
+    "dates": "2015-2016",
+    "description": "Drives people around in a manner not entirely unlike a taxi driver, only better."
+  }, {
+    "employer": "Analog Devices",
+    "title": "Front End Developer",
+    "location": "Norwood, MA",
+    "dates": "2012-2014",
+    "description": "Developed front end for in-house resource tracking web application"
+  }, {
+    "employer": "Harvard Graduate School Of Arts and Sciences",
+    "title": "File Clerk",
+    "location": "Cambridge, MA",
+    "dates": "2011-2012",
+    "description": "Opened, processed, filed graduate school applications"
+  }, {
+    "employer": "U.S Census Bureau",
+    "title": "Census Enumerator",
+    "location": "Somerville, MA",
+    "dates": "2010-2011",
+    "description": "Went door to door contacting citizens whose census forms had not been returned."
+  }, {
+    "employer": "Houghton Mifflin",
+    "title": "Senior Software Architect",
+    "location": "Boston, MA",
+    "dates": "1998-2008",
+    "description": "Sales and Marketing applications in Lotus Notes and SQL, IT Support"
+  }],
+
   //encapsulated display function
   "display": function() {
     for (var job = 0; job < work.jobs.length; job++) {
@@ -22,39 +54,7 @@ var work = {
         HTMLworkDescription.replace("%data%", work.jobs[job].description);
       $(".work-entry:last").append(formattedDescription);
     }
-  },
-
-  "jobs": [{
-    "title": "Rideshare Driver",
-    "employer": "Lyft",
-    "dates": "2015-2016",
-    "description": "Drives people around in a manner not entirely unlike a taxi driver, only better.",
-    "location": "Boston, MA"
-  }, {
-    "title": "Front End Developer",
-    "employer": "Analog Devices",
-    "dates": "2012-2014",
-    "description": "Developed front end for in-house resource tracking web application",
-    "location": "Norwood, MA"
-  }, {
-    "title": "File Clerk",
-    "employer": "Harvard Graduate School Of Arts and Sciences",
-    "dates": "2011-2012",
-    "description": "Opened, processed, filed graduate school applications",
-    "location": "Cambridge, MA"
-  }, {
-    "title": "Census Enumerator",
-    "employer": "U.S Census Bureau",
-    "dates": "2010-2011",
-    "description": "Went door to door contacting citizens whose census forms had not been returned.",
-    "location": "Somerville, MA"
-  }, {
-    "title": "Senior Software Architect",
-    "employer": "Houghton Mifflin",
-    "dates": "1998-2008",
-    "description": "Sales and Marketing applications in Lotus Notes and SQL, IT Support",
-    "location": "Boston, MA"
-  }]
+  }
 };
 
 work.display();
@@ -65,30 +65,30 @@ work.display();
 var education = {
   "schools": [{
     "name": "Udacity",
-    "dates": "2016",
     "location": "Somerville, MA",
-    "majors": "Front End Web Developer",
     "degree": "Nanodegree",
+    "majors": ["Front End Web Developer"],
+    "dates": "2016",
     "url": "http://www.udacity.com"
   }, {
     "name": "American International College, Computer Career Institute",
-    "dates": "2008-2011",
     "location": "Burlington, MA",
-    "majors": "Enterprise Solutions Developer",
     "degree": "Master Certificate",
+    "majors": ["Enterprise Solutions Developer"],
+    "dates": "2008-2011",
     "url": "https://en.wikipedia.org/wiki/American_Career_Institute"
   }, {
     "name": "American International College, Computer Career Institute",
-    "dates": "2008-2011",
     "location": "Cambridge, MA",
-    "majors": "Visual Communication - Digital 3-D Design",
     "degree": "Master Certificate",
+    "majors": ["Visual Communication - Digital 3-D Design"],
+    "dates": "2008-2011",
     "url": "https://en.wikipedia.org/wiki/American_Career_Institute"
   }, {
     "name": "Boston University, School of Public Communication",
     "dates": "1977-1981",
     "location": "Boston, MA",
-    "majors": "Journalism",
+    "majors": ["Journalism"],
     "degree": "",
     "url": "http://www.bu.edu/"
   }],
@@ -156,7 +156,7 @@ education.display();
 
 var projects = {
   "projects": [{
-    "title": "Big Foo",
+    "title": "Big Foo, Which Has Two Pictures",
     "dates": "2011",
     "description": "Little bunny Foo Foo Went hopping through the forest Scooping up the field mice And bopping them on the head Down came the Good Fairy, and she said 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And bopping them on the head. 'I'll give you 3 chances, And if you don't behave, I will turn you into a goon!'",
     "images": [{
@@ -177,7 +177,7 @@ var projects = {
     }],
     "url": "http://www.constancehirsch.com"
   }, {
-    "title": "Little Bunny FooFoo",
+    "title": "Little Bunny FooFoo, Which Has Only One Picture",
     "dates": "2013",
     "description": "Little bunny Foo Foo Went hopping through the forest Scooping up the field mice And bopping them on the head Down came the Good Fairy, and she said 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And bopping them on the head. 'I'll give you 3 chances, And if you don't behave, I will turn you into a goon!'",
     "images": [{
@@ -228,18 +228,6 @@ projects.display();
 var bio = {
   "name": "Connie Hirsch",
   "role": "Front End Web Developer",
-  "welcomeMessage": "<p>I've spent more than 20 years working with application programs such" +
-    " as Ingres, SQL Server, Lotus Notes, Filemaker, and other packages.  I've studied C and" +
-    " Java, and have actually done front end coding in PHP, so I know I have the hard talent" +
-    " and soft skills to excel at web development.</p>" +
-    "<p>Hiring requirements for these jobs have sure changed!-- when last I was looking for" +
-    " a  coding job, you weren't expected to have an online portfolio of project examples.  " +
-    "Udacity in particular focuses on projects that showcase exactly the code and process that" +
-    " employers are expecting.</p>" +
-    "<p>Plus... I really do find coding -- making pages, programs work -- to be <em>fun</em>.  " +
-    "I like solving problems, I like looking at a working page I've made, I like interacting" +
-    " with the users to make it better for them.  This is exactly where I should be.</p>",
-
   "contacts": {
     "mobile": {
       "value": "<a href='tel:+1-617-555-1234'>617 555-1234</a>",
@@ -266,18 +254,17 @@ var bio = {
       "icon": "<i class='fa fa-home'></i>"
     }
   },
-  "oldcontacts": {
-    "mobile": "617 555-1234",
-    "email": "connie.hirsch@gmail.com",
-    "github": "ConnieHirsch",
-    "twitter": "ConnieHirsch",
-    "location": "Somerville, MA"
-  },
-  "bioPic": {
-    "pic": "images/watercolorSmall.jpg",
-    "alt": "A picture of me."
-  },
-  //"skills": ["PHP", "CSS3", "Object-oriented coding", "Knitting", "Writing", "Navigation", "Demolition Derby"],
+  "welcomeMessage": "<p>I've spent more than 20 years working with application programs such" +
+    " as Ingres, SQL Server, Lotus Notes, Filemaker, and other packages.  I've studied C and" +
+    " Java, and have actually done front end coding in PHP, so I know I have the hard talent" +
+    " and soft skills to excel at web development.</p>" +
+    "<p>Hiring requirements for these jobs have sure changed!-- when last I was looking for" +
+    " a  coding job, you weren't expected to have an online portfolio of project examples.  " +
+    "Udacity in particular focuses on projects that showcase exactly the code and process that" +
+    " employers are expecting.</p>" +
+    "<p>Plus... I really do find coding -- making pages, programs work -- to be <em>fun</em>.  " +
+    "I like solving problems, I like looking at a working page I've made, I like interacting" +
+    " with the users to make it better for them.  This is exactly where I should be.</p>",
   "skills": [{
     "skill": "PHP",
     "info": "Self-taught, in fact, but only after formal Java school."
@@ -300,6 +287,10 @@ var bio = {
     "skill": "Demolition Derby",
     "info": "Only really the avoiding being HIT part. That comes in handy in Boston traffic."
   }],
+  "bioPic": {
+    "pic": "images/watercolorSmall.jpg",
+    "alt": "A picture of me."
+  },
   //encapsulated display function
   "display": function() {
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
