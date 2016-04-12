@@ -158,7 +158,11 @@ var projects = {
   "projects": [{
     "title": "Big Foo, Which Has Two Pictures",
     "dates": "2011",
-    "description": "Little bunny Foo Foo Went hopping through the forest Scooping up the field mice And bopping them on the head Down came the Good Fairy, and she said 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And bopping them on the head. 'I'll give you 3 chances, And if you don't behave, I will turn you into a goon!'",
+    "description": "Little bunny Foo Foo Went hopping through the forest Scooping up the" +
+    " field mice And bopping them on the head Down came the Good Fairy, and she said" +
+    " 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And" +
+    " bopping them on the head. 'I'll give you 3 chances, And if you don't behave, " +
+    "I will turn you into a goon!'",
     "images": [{
       "pic": "images/leverett-320x240.jpg",
       "alt": "Sky over the Leverett Circle, Boston"
@@ -170,7 +174,11 @@ var projects = {
   }, {
     "title": "This Project Has No Picture",
     "dates": "2012",
-    "description": "Little bunny Foo Foo Went hopping through the forest Scooping up the field mice And bopping them on the head Down came the Good Fairy, and she said 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And bopping them on the head. 'I'll give you 3 chances, And if you don't behave, I will turn you into a goon!'",
+    "description": "Little bunny Foo Foo Went hopping through the forest Scooping up the" +
+    " field mice And bopping them on the head Down came the Good Fairy, and she said" +
+    " 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And" +
+    " bopping them on the head. 'I'll give you 3 chances, And if you don't behave, " +
+    "I will turn you into a goon!'",
     "images": [{
       "pic": "",
       "alt": ""
@@ -179,7 +187,11 @@ var projects = {
   }, {
     "title": "Little Bunny FooFoo, Which Has Only One Picture",
     "dates": "2013",
-    "description": "Little bunny Foo Foo Went hopping through the forest Scooping up the field mice And bopping them on the head Down came the Good Fairy, and she said 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And bopping them on the head. 'I'll give you 3 chances, And if you don't behave, I will turn you into a goon!'",
+    "description": "Little bunny Foo Foo Went hopping through the forest Scooping up the" +
+    " field mice And bopping them on the head Down came the Good Fairy, and she said" +
+    " 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And" +
+    " bopping them on the head. 'I'll give you 3 chances, And if you don't behave, " +
+    "I will turn you into a goon!'",
     "images": [{
       "pic": "images/wormedShell-320x240.jpg",
       "alt": "Worm casts in a conch shell"
@@ -273,13 +285,15 @@ var bio = {
     "info": "I can make web pages sit up and do tricks."
   }, {
     "skill": "Object-oriented coding",
-    "info": "I started being a capital-P Programmer when I understood that programs really are ALL objects."
+    "info": "I started being a capital-P Programmer when I understood that programs" +
+    " really are ALL objects."
   }, {
     "skill": "Knitting",
     "info": "More in common with programming than you might think."
   }, {
     "skill": "Writing",
-    "info": "Started college with the intention to become a journalist. Became a coder instead, but I can write documentation like whoa."
+    "info": "Started college with the intention to become a journalist. Became a coder" +
+    " instead, but I can write documentation like whoa."
   }, {
     "skill": "Navigation",
     "info": "I am hardly ever lost, but occasionally I don&#39;t know where I am."
