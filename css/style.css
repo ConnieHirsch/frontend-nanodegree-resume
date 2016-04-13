@@ -22,6 +22,12 @@
 .navbar {
   margin-bottom: 0px;
 }
+
+/* navbar body padding for fixed top! */
+body {
+  padding-top: 60px;
+}
+
 .education-entry,
 .onlineClasses-entry,
 .work-entry,
