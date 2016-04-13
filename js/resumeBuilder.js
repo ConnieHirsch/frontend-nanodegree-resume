@@ -38,21 +38,27 @@ var work = {
   //encapsulated display function
   "display": function() {
     for (var job = 0; job < work.jobs.length; job++) {
-      $("#workExperience").append(HTMLworkStart);
+      $("#workExperience")
+        .append(HTMLworkStart);
       //console.log(work.jobs[job].employer);
       var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
       var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
       var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
-      $(".work-entry:last").append(formattedEmployerTitle);
+      $(".work-entry:last")
+        .append(formattedEmployerTitle);
 
       var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-      $(".work-entry:last").append(formattedDates);
+      $(".work-entry:last")
+        .append(formattedDates);
       var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-      $(".work-entry:last").append(formattedLocation).append("<div style='clear: both;'></div>");
+      $(".work-entry:last")
+        .append(formattedLocation)
+        .append("<div style='clear: both;'></div>");
       var formattedDescription =
         HTMLworkDescription.replace("%data%", work.jobs[job].description);
-      $(".work-entry:last").append(formattedDescription);
+      $(".work-entry:last")
+        .append(formattedDescription);
     }
   }
 };
@@ -103,18 +109,23 @@ var education = {
   "display": function() {
 
     for (var school = 0; school < education.schools.length; school++) {
-      $("#education").append(HTMLschoolStart);
+      $("#education")
+        .append(HTMLschoolStart);
       //console.log(education.schools[school].name);
       var formattedschoolName =
         HTMLschoolName.replace("%data%", education.schools[school].name);
-      $(".education-entry:last").append(formattedschoolName);
+      $(".education-entry:last")
+        .append(formattedschoolName);
 
       var formattedschoolDates =
         HTMLschoolDates.replace("%data%", education.schools[school].dates);
-      $(".education-entry:last").append(formattedschoolDates);
+      $(".education-entry:last")
+        .append(formattedschoolDates);
       var formattedschoolLocation =
         HTMLschoolLocation.replace("%data%", education.schools[school].location);
-      $(".education-entry:last").append(formattedschoolLocation).append("<div style='clear: both;'></div>");
+      $(".education-entry:last")
+        .append(formattedschoolLocation)
+        .append("<div style='clear: both;'></div>");
 
       // formatting an absence of degree -- don't show degree + comma if no degree.
       var formattedComma = ",";
@@ -123,25 +134,37 @@ var education = {
       }
 
       var formattedschoolDegreeMajor =
-        HTMLschoolDegreeMajor.replace("%degree%", education.schools[school].degree).replace("%comma%", formattedComma).replace("%major%", education.schools[school].majors);
-      $(".education-entry:last").append(formattedschoolDegreeMajor);
+        HTMLschoolDegreeMajor.replace("%degree%", education.schools[school].degree)
+        .replace("%comma%", formattedComma)
+        .replace("%major%", education.schools[school].majors);
+      $(".education-entry:last")
+        .append(formattedschoolDegreeMajor);
 
       var myURL = education.schools[school].url;
-      var formattedURL = HTMLonlineURL.replace("%url%", myURL).replace("%data%", myURL);
-      $(".education-entry:last").append(formattedURL);
+      var formattedURL = HTMLonlineURL.replace("%url%", myURL)
+        .replace("%data%", myURL);
+      $(".education-entry:last")
+        .append(formattedURL);
 
 
     }
 
-    $("#education").append(HTMLonlineClasses);
+    $("#education")
+      .append(HTMLonlineClasses);
     for (var onlineCourse = 0; onlineCourse < education.onlineCourses.length; onlineCourse++) {
-      var formattedTitleSchool = HTMLonlineTitleSchool.replace("%title%", education.onlineCourses[onlineCourse].title).replace("%school%", education.onlineCourses[onlineCourse].school);
+      var formattedTitleSchool = HTMLonlineTitleSchool.replace("%title%", education.onlineCourses[onlineCourse].title)
+        .replace("%school%", education.onlineCourses[onlineCourse].school);
       var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].date);
       var OnlineURL = education.onlineCourses[onlineCourse].url;
-      var formattedOnlineURL = HTMLonlineURL.replace("%url%", OnlineURL).replace("%data%", OnlineURL);
-      $(".onlineClasses-entry:last").append(formattedTitleSchool);
-      $(".onlineClasses-entry:last").append(formattedDates).append("<div style='clear: both;'></div>");
-      $(".onlineClasses-entry:last").append(formattedOnlineURL);
+      var formattedOnlineURL = HTMLonlineURL.replace("%url%", OnlineURL)
+        .replace("%data%", OnlineURL);
+      $(".onlineClasses-entry:last")
+        .append(formattedTitleSchool);
+      $(".onlineClasses-entry:last")
+        .append(formattedDates)
+        .append("<div style='clear: both;'></div>");
+      $(".onlineClasses-entry:last")
+        .append(formattedOnlineURL);
     }
   }
 };
@@ -159,21 +182,21 @@ var projects = {
     "title": "Big Foo, Which Has Two Pictures",
     "dates": "2011",
     "description": "Little bunny Foo Foo Went hopping through the forest Scooping up the" +
-    " field mice And bopping them on the head Down came the Good Fairy, and she said" +
-    " 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And" +
-    " bopping them on the head. 'I'll give you 3 chances, And if you don't behave, " +
-    "I will turn you into a goon!'",
+      " field mice And bopping them on the head Down came the Good Fairy, and she said" +
+      " 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And" +
+      " bopping them on the head. 'I'll give you 3 chances, And if you don't behave, " +
+      "I will turn you into a goon!'",
     "images": ["images/leverett-320x240.jpg", "images/rooster-320x240.jpg"],
-    "imagesAlt": ["Sky over the Leverett Circle, Boston","Rooster, Somerville MA"],
+    "imagesAlt": ["Sky over the Leverett Circle, Boston", "Rooster, Somerville MA"],
     "url": "http://www.constancehirsch.com"
   }, {
     "title": "This Project Has No Picture",
     "dates": "2012",
     "description": "Little bunny Foo Foo Went hopping through the forest Scooping up the" +
-    " field mice And bopping them on the head Down came the Good Fairy, and she said" +
-    " 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And" +
-    " bopping them on the head. 'I'll give you 3 chances, And if you don't behave, " +
-    "I will turn you into a goon!'",
+      " field mice And bopping them on the head Down came the Good Fairy, and she said" +
+      " 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And" +
+      " bopping them on the head. 'I'll give you 3 chances, And if you don't behave, " +
+      "I will turn you into a goon!'",
     "images": [""],
     "imagesAlt": [""],
     "url": "http://www.constancehirsch.com"
@@ -181,10 +204,10 @@ var projects = {
     "title": "Little Bunny FooFoo, Which Has Only One Picture",
     "dates": "2013",
     "description": "Little bunny Foo Foo Went hopping through the forest Scooping up the" +
-    " field mice And bopping them on the head Down came the Good Fairy, and she said" +
-    " 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And" +
-    " bopping them on the head. 'I'll give you 3 chances, And if you don't behave, " +
-    "I will turn you into a goon!'",
+      " field mice And bopping them on the head Down came the Good Fairy, and she said" +
+      " 'Little bunny Foo Foo I don't want to see you Scooping up the field mice And" +
+      " bopping them on the head. 'I'll give you 3 chances, And if you don't behave, " +
+      "I will turn you into a goon!'",
     "images": ["images/wormedShell-320x240.jpg"],
     "imagesAlt": ["Worm casts in a conch shell"],
     "url": "http://www.constancehirsch.com"
@@ -200,24 +223,32 @@ var projects = {
         addGray = "";
       }
       var formattedprojectStart = HTMLprojectStart.replace("%extraClass%", addGray);
-      $("#projects").append(formattedprojectStart);
+      $("#projects")
+        .append(formattedprojectStart);
       var formattedprojectTitle =
-        HTMLprojectTitle.replace("%url%", projects.projects[proj].url).replace("%data%", projects.projects[proj].title).replace("%dates%", projects.projects[proj].dates);
-      $(".project-entry:last").append(formattedprojectTitle);
+        HTMLprojectTitle.replace("%url%", projects.projects[proj].url)
+        .replace("%data%", projects.projects[proj].title)
+        .replace("%dates%", projects.projects[proj].dates);
+      $(".project-entry:last")
+        .append(formattedprojectTitle);
 
       var formattedprojectDescription =
         HTMLprojectDescription.replace("%data%", projects.projects[proj].description);
-      $(".project-entry:last").append("<p>" + formattedprojectDescription);
+      $(".project-entry:last")
+        .append("<p>" + formattedprojectDescription);
 
       if (projects.projects[proj].images.length > 0) {
         for (var i = 0; i < projects.projects[proj].images.length; i++) {
           var formattedprojectImage =
-            HTMLprojectImage.replace("%data%", projects.projects[proj].images[i]).replace("%datum%", projects.projects[proj].imagesAlt[i]);
-          $(".project-entry:last").append(formattedprojectImage);
+            HTMLprojectImage.replace("%data%", projects.projects[proj].images[i])
+            .replace("%datum%", projects.projects[proj].imagesAlt[i]);
+          $(".project-entry:last")
+            .append(formattedprojectImage);
         }
       }
       projCount++;
-      $(".project-entry:last").append("</p><div style='clear: both;'></div>");
+      $(".project-entry:last")
+        .append("</p><div style='clear: both;'></div>");
     }
   }
 };
@@ -231,21 +262,21 @@ projects.display();
 var bio = {
   "name": "Connie Hirsch",
   "role": "Front End Web Developer",
-  "contacts" : {
-    "mobile" : "<a href='tel:+1-617-555-1234'>617 555-1234</a>",
-    "email" : "<a href='mailto:connie.hirsch@gmail.com?Subject=Hello'>connie.hirsch@gmail.com</a>",
-    "github" : "<a href='https://github.com/ConnieHirsch' target='_blank'>ConnieHirsch</a>",
-    "twitter" : "<a href='https://twitter.com/ConnieHirsch' target='_blank'>ConnieHirsch</a>",
-    "linkedin" : "<a href='https://www.linkedin.com/in/conniehirsch' target='_blank'>ConnieHirsch</a>",
-    "location" : "<a href='https://en.wikipedia.org/wiki/Somerville,_Massachusetts' target='_blank'>Somerville, MA</a>"
+  "contacts": {
+    "mobile": "<a href='tel:+1-617-555-1234'>617 555-1234</a>",
+    "email": "<a href='mailto:connie.hirsch@gmail.com?Subject=Hello'>connie.hirsch@gmail.com</a>",
+    "github": "<a href='https://github.com/ConnieHirsch' target='_blank'>ConnieHirsch</a>",
+    "twitter": "<a href='https://twitter.com/ConnieHirsch' target='_blank'>ConnieHirsch</a>",
+    "linkedin": "<a href='https://www.linkedin.com/in/conniehirsch' target='_blank'>ConnieHirsch</a>",
+    "location": "<a href='https://en.wikipedia.org/wiki/Somerville,_Massachusetts' target='_blank'>Somerville, MA</a>"
   },
-  "contactsIcon" : {
-    "mobile" : "<i class='fa fa-phone'></i>",
-    "email" : "<i class='fa fa-paper-plane'></i>",
-    "github" : "<i class='fa fa-git'></i>",
-    "twitter" : "<i class='fa fa-twitter'></i>",
-    "linkedin" : "<i class='fa fa-linkedin'></i>",
-    "location" : "<i class='fa fa-home'></i>"
+  "contactsIcon": {
+    "mobile": "<i class='fa fa-phone'></i>",
+    "email": "<i class='fa fa-paper-plane'></i>",
+    "github": "<i class='fa fa-git'></i>",
+    "twitter": "<i class='fa fa-twitter'></i>",
+    "linkedin": "<i class='fa fa-linkedin'></i>",
+    "location": "<i class='fa fa-home'></i>"
   },
   "welcomeMessage": "<p>I've spent more than 20 years working with application programs such" +
     " as Ingres, SQL Server, Lotus Notes, Filemaker, and other packages.  I've studied C and" +
@@ -267,14 +298,14 @@ var bio = {
   }, {
     "skill": "Object-oriented coding",
     "info": "I started being a capital-P Programmer when I understood that programs" +
-    " really are ALL objects."
+      " really are ALL objects."
   }, {
     "skill": "Knitting",
     "info": "More in common with programming than you might think."
   }, {
     "skill": "Writing",
     "info": "Started college with the intention to become a journalist. Became a coder" +
-    " instead, but I can write documentation like whoa."
+      " instead, but I can write documentation like whoa."
   }, {
     "skill": "Navigation",
     "info": "I am hardly ever lost, but occasionally I don&#39;t know where I am."
@@ -291,49 +322,75 @@ var bio = {
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
-    $("#topTitle").append(formattedName);
-    $("#topTitle").append(formattedRole);
+    $("#topTitle")
+      .append(formattedName);
+    $("#topTitle")
+      .append(formattedRole);
 
-    for (var contact = 0; contact < bio.contacts.length; contact++ ){
+    for (var contact = 0; contact < bio.contacts.length; contact++) {
       console.log(bio.contacts[contact]);
     }
-    var formattedmobile = HTMLmobile.replace("%icon%", bio.contactsIcon.mobile).replace("%data%", bio.contacts.mobile);
-    var formattedemail = HTMLemail.replace("%icon%", bio.contactsIcon.email).replace("%data%", bio.contacts.email);
-    var formattedgithub = HTMLgithub.replace("%icon%", bio.contactsIcon.github).replace("%data%", bio.contacts.github);
-    var formattedtwitter = HTMLtwitter.replace("%icon%", bio.contactsIcon.twitter).replace("%data%", bio.contacts.twitter);
-    var formattedlinkedin = HTMLlinkedin.replace("%icon%", bio.contactsIcon.linkedin).replace("%data%", bio.contacts.linkedin);
-    var formattedlocation = HTMLlocation.replace("%icon%", bio.contactsIcon.location).replace("%data%", bio.contacts.location);
+    var formattedmobile = HTMLmobile.replace("%icon%", bio.contactsIcon.mobile)
+      .replace("%data%", bio.contacts.mobile);
+    var formattedemail = HTMLemail.replace("%icon%", bio.contactsIcon.email)
+      .replace("%data%", bio.contacts.email);
+    var formattedgithub = HTMLgithub.replace("%icon%", bio.contactsIcon.github)
+      .replace("%data%", bio.contacts.github);
+    var formattedtwitter = HTMLtwitter.replace("%icon%", bio.contactsIcon.twitter)
+      .replace("%data%", bio.contacts.twitter);
+    var formattedlinkedin = HTMLlinkedin.replace("%icon%", bio.contactsIcon.linkedin)
+      .replace("%data%", bio.contacts.linkedin);
+    var formattedlocation = HTMLlocation.replace("%icon%", bio.contactsIcon.location)
+      .replace("%data%", bio.contacts.location);
 
     // add it to the header AND footer as well!
-    $(formattedmobile).appendTo("#footerContacts");
-    $(formattedmobile).appendTo("#topContacts");
-    $(formattedemail).appendTo("#topContacts");
-    $(formattedemail).appendTo("#footerContacts");
-    $(formattedgithub).appendTo("#topContacts");
-    $(formattedgithub).appendTo("#footerContacts");
-    $(formattedtwitter).appendTo("#topContacts");
-    $(formattedtwitter).appendTo("#footerContacts");
-    $(formattedlinkedin).appendTo("#topContacts");
-    $(formattedlinkedin).appendTo("#footerContacts");
-    $(formattedlocation).appendTo("#topContacts");
-    $(formattedlocation).appendTo("#footerContacts");
+    $(formattedmobile)
+      .appendTo("#footerContacts");
+    $(formattedmobile)
+      .appendTo("#topContacts");
+    $(formattedemail)
+      .appendTo("#topContacts");
+    $(formattedemail)
+      .appendTo("#footerContacts");
+    $(formattedgithub)
+      .appendTo("#topContacts");
+    $(formattedgithub)
+      .appendTo("#footerContacts");
+    $(formattedtwitter)
+      .appendTo("#topContacts");
+    $(formattedtwitter)
+      .appendTo("#footerContacts");
+    $(formattedlinkedin)
+      .appendTo("#topContacts");
+    $(formattedlinkedin)
+      .appendTo("#footerContacts");
+    $(formattedlocation)
+      .appendTo("#topContacts");
+    $(formattedlocation)
+      .appendTo("#footerContacts");
 
-    var formattedbiopic = HTMLbioPic.replace("%data%", bio.biopic.pic).replace("%datum%", bio.biopic.alt);
-    $("#bioPic").append(formattedbiopic);
+    var formattedbiopic = HTMLbioPic.replace("%data%", bio.biopic.pic)
+      .replace("%datum%", bio.biopic.alt);
+    $("#bioPic")
+      .append(formattedbiopic);
 
     var formattedWelcome = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#welcome").append(formattedWelcome);
+    $("#welcome")
+      .append(formattedWelcome);
 
-    $("#madSkills").append(HTMLskillsStart);
+    $("#madSkills")
+      .append(HTMLskillsStart);
     //console.log(bio.skills);
     var formattedSkills = "";
     if (bio.skills.length > 0) {
       for (var i = 0; i < bio.skills.length; i++) {
-        var nextSkill = HTMLskills.replace("%info%", bio.skills[i].info).replace("%data%", bio.skills[i].skill);
+        var nextSkill = HTMLskills.replace("%info%", bio.skills[i].info)
+          .replace("%data%", bio.skills[i].skill);
         formattedSkills = formattedSkills.concat(nextSkill);
       }
     }
-    $("#skills").append(formattedSkills);
+    $("#skills")
+      .append(formattedSkills);
   }
 
 };
@@ -344,7 +401,8 @@ bio.display();
 ///////////////////
 // map magic     //
 ///////////////////
-$("#mapDiv").append(googleMap);
+$("#mapDiv")
+  .append(googleMap);
 
 
 /////////////////////
